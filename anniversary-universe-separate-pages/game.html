@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Love Memory Game</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+
+  <div class="game-glow glow-one"></div>
+  <div class="game-glow glow-two"></div>
+  <div class="grain"></div>
+
+  <main class="game-page">
+
+
+<header class="game-header">
+
+  <button
+    id="backBtn"
+    class="back-button"
+    type="button"
+    aria-label="กลับเมนู"
+  >
+    ←
+  </button>
+
+  <div class="game-heading">
+    <span>OUR LITTLE GAME</span>
+    <h1>Love Memory</h1>
+  </div>
+
+  <div class="header-right">
+    <button
+      id="soundBtn"
+      class="sound-button"
+      type="button"
+      aria-label="เปิดหรือปิดเสียง"
+    >
+      🔊
+    </button>
+
+    <div id="questionCounter" class="question-counter">
+      01 / 07
+    </div>
+  </div>
+
+</header>
+
+
+<section class="progress-section">
+
+  <div class="progress-info">
+    <span>MEMORY PROGRESS</span>
+    <span id="progressText">01 — 07</span>
+  </div>
+
+  <div class="progress-bar">
+    <div
+      id="progressFill"
+      class="progress-fill"
+    ></div>
+  </div>
+
+</section>
+
+
+<section
+  id="questionCard"
+  class="question-card"
+>
+
+  <div class="question-number">
+
+    <span id="bigNumber">
+      01
+    </span>
+
+    <span>♡</span>
+
+  </div>
+
+
+  <div class="question-content">
+
+    <div class="question-label">
+      QUESTION
+    </div>
+
+    <h2 id="questionText">
+      จำได้ไหมว่าเราเจอกันครั้งแรกที่ไหน?
+    </h2>
+
+  </div>
+
+
+  <div
+    id="answers"
+    class="answers"
+  ></div>
+
+
+  <div
+    id="answerMessage"
+    class="answer-message"
+    aria-live="polite"
+  ></div>
+
+</section>
+
+
+<div class="score-box">
+
+  <span>YOUR SCORE</span>
+
+  <strong id="score">0</strong>
+
+  <small>
+    / 7
+  </small>
+
+</div>
+
+
+<footer class="game-footer">
+  Made with love ♡ just for us
+</footer>
+
+
+  </main>
+
+  <!-- RESULT -->
+
+  <div
+    id="resultScreen"
+    class="result-screen"
+  >
+
+
+<div class="result-card">
+
+  <div class="result-heart">
+    ♡
+  </div>
+
+  <div class="result-label">
+    GAME COMPLETE
+  </div>
+
+  <h1 id="resultTitle">
+    เกมจบแล้ว ♡
+  </h1>
+
+  <p id="resultText">
+    เก่งมากเลยนะ
+  </p>
+
+
+  <div class="final-score">
+
+    <span>
+      LOVE MEMORY SCORE
+    </span>
+
+    <strong id="finalScore">
+      0 / 7
+    </strong>
+
+  </div>
+
+
+  <div
+    id="secretMessage"
+    class="secret-message"
+  >
+
+    <span>
+      ✦ SECRET MEMORY UNLOCKED ✦
+    </span>
+
+    <p>
+      ไม่ว่าจะผ่านไปนานแค่ไหน<br>
+      เค้าก็ยังเลือกเธอเหมือนเดิม ♡
+    </p>
+
+  </div>
+
+
+  <div class="result-actions">
+
+    <button
+      id="playAgain"
+      class="play-again"
+      type="button"
+    >
+      เล่นอีกครั้ง ♡
+    </button>
+
+    <button
+      id="resultBack"
+      class="back-menu"
+      type="button"
+    >
+      กลับเมนู
+    </button>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+  <script src="game.js"></script>
+
+</body>
+</html>

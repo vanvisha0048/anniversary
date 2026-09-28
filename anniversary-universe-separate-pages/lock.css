@@ -1,0 +1,1544 @@
+/* =========================================================
+   CUTE ANNIVERSARY
+   SOFT DIGITAL DIARY
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+  --bg:
+    #211516;
+
+  --bg-dark:
+    #160f10;
+
+  --cream:
+    #f5e9df;
+
+  --cream-soft:
+    #d9c6bd;
+
+  --pink:
+    #c789a7;
+
+  --pink-light:
+    #dfa9c1;
+
+  --pink-soft:
+    #edc7d7;
+
+  --brown-pink:
+    #76565d;
+
+  --line:
+    rgba(245, 233, 223, .12);
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+
+  width: 100%;
+  min-height: 100%;
+
+}
+
+
+body {
+
+  margin: 0;
+
+  overflow-x: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 15% 45%,
+      rgba(199, 137, 167, .12),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 85% 55%,
+      rgba(118, 86, 93, .13),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      135deg,
+      #160f10 0%,
+      #251719 52%,
+      #180f10 100%
+    );
+
+  color:
+    var(--cream);
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+   ========================================================= */
+
+.bg-glow {
+
+  position: fixed;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+}
+
+
+.bg-glow-left {
+
+  left: -150px;
+  bottom: -100px;
+
+  background:
+    rgba(199, 137, 167, .12);
+
+}
+
+
+.bg-glow-right {
+
+  right: -140px;
+  top: -100px;
+
+  background:
+    rgba(223, 169, 193, .08);
+
+}
+
+
+/* =========================================================
+   GRAIN
+   ========================================================= */
+
+.grain {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  opacity: .035;
+
+  background-image:
+
+    url(
+      "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.6'/%3E%3C/svg%3E"
+    );
+
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page {
+
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(1100px, 90vw);
+
+  min-height: 100vh;
+
+  margin:
+    auto;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(300px, .9fr)
+    minmax(380px, 1fr);
+
+  align-items:
+    center;
+
+  gap:
+    80px;
+
+  padding:
+    45px 0;
+
+}
+
+
+/* =========================================================
+   LEFT VIDEO
+   ========================================================= */
+
+.memory {
+
+  width: 100%;
+
+  text-align:
+    center;
+
+}
+
+
+.memory-label {
+
+  margin-bottom:
+    13px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    11px;
+
+  font-style:
+    italic;
+
+  color:
+    rgba(237, 199, 215, .65);
+
+}
+
+
+/* =========================================================
+   VIDEO FRAME
+
+   9 : 16
+   ========================================================= */
+
+.video-frame {
+
+  position:
+    relative;
+
+  width:
+    min(330px, 100%);
+
+  aspect-ratio:
+    9 / 16;
+
+  margin:
+    auto;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    10px;
+
+  background:
+    #0e090a;
+
+  box-shadow:
+    0 30px 65px
+    rgba(0, 0, 0, .38);
+
+}
+
+
+.couple-video {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    block;
+
+  object-fit:
+    contain;
+
+  background:
+    #0e090a;
+
+}
+
+
+.video-overlay {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  pointer-events:
+    none;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(20, 9, 12, .48)
+    );
+
+}
+
+
+.video-caption {
+
+  position:
+    absolute;
+
+  left:
+    16px;
+
+  right:
+    16px;
+
+  bottom:
+    14px;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    12px;
+
+  color:
+    white;
+
+}
+
+
+.memory-caption {
+
+  margin-top:
+    13px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    10px;
+
+  font-style:
+    italic;
+
+  color:
+    rgba(245, 233, 223, .34);
+
+}
+
+
+/* =========================================================
+   RIGHT ANNIVERSARY CARD
+   ========================================================= */
+
+.anniversary-card {
+
+  position:
+    relative;
+
+  width:
+    100%;
+
+  max-width:
+    450px;
+
+  min-height:
+    560px;
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  margin:
+    auto;
+
+  border:
+    1px solid
+    rgba(237, 199, 215, .17);
+
+  border-radius:
+    28px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(255, 236, 244, .075),
+      rgba(255, 255, 255, .025)
+    );
+
+  box-shadow:
+
+    0 30px 70px
+    rgba(0, 0, 0, .24),
+
+    inset 0 1px 0
+    rgba(255,255,255,.05);
+
+  overflow:
+    hidden;
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+
+.anniversary-card:hover {
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+
+    0 38px 85px
+    rgba(0, 0, 0, .3),
+
+    0 0 50px
+    rgba(199, 137, 167, .07);
+
+}
+
+
+/* =========================================================
+   CARD GLOW
+   ========================================================= */
+
+.anniversary-card::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    230px;
+
+  height:
+    230px;
+
+  top:
+    -100px;
+
+  right:
+    -70px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(223, 169, 193, .11);
+
+  filter:
+    blur(50px);
+
+}
+
+
+.anniversary-card::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    180px;
+
+  height:
+    180px;
+
+  left:
+    -100px;
+
+  bottom:
+    -90px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(199, 137, 167, .09);
+
+  filter:
+    blur(50px);
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.card-content {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    78%;
+
+  text-align:
+    center;
+
+}
+
+
+/* =========================================================
+   TOP HEART
+   ========================================================= */
+
+.top-heart {
+
+  margin-bottom:
+    18px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    19px;
+
+  color:
+    var(--pink-light);
+
+  opacity:
+    .75;
+
+  animation:
+    heartBeat 2.4s
+    ease-in-out
+    infinite;
+
+}
+
+
+@keyframes heartBeat {
+
+  0%,
+  100% {
+
+    transform:
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+      scale(1.15);
+
+  }
+
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.title {
+
+  margin-top:
+    0;
+
+}
+
+
+.title h1 {
+
+  margin:
+    0;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(43px, 5vw, 58px);
+
+  font-weight:
+    400;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -1.7px;
+
+}
+
+
+.title h1 i {
+
+  font-style:
+    normal;
+
+  color:
+    var(--pink-light);
+
+}
+
+
+/* =========================================================
+   LOVE TIME
+   ========================================================= */
+
+.love-time {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    13px;
+
+  margin:
+    27px auto 29px;
+
+}
+
+
+.time-item {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    3px;
+
+}
+
+
+.time-item strong {
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    24px;
+
+  font-weight:
+    400;
+
+  line-height:
+    1;
+
+  color:
+    var(--pink-soft);
+
+}
+
+
+.time-item span {
+
+  font-size:
+    7px;
+
+  letter-spacing:
+    1.5px;
+
+  color:
+    rgba(245, 233, 223, .35);
+
+}
+
+
+.time-dot {
+
+  margin-top:
+    -7px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    18px;
+
+  color:
+    rgba(237, 199, 215, .3);
+
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message {
+
+  margin-bottom:
+    15px;
+
+  font-size:
+    12px;
+
+  color:
+    rgba(245, 233, 223, .68);
+
+}
+
+
+/* =========================================================
+   PASSWORD BOX
+   ========================================================= */
+
+.pin-box {
+
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    64px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  margin-top:
+    4px;
+
+  border:
+    1px solid
+    rgba(237, 199, 215, .18);
+
+  border-radius:
+    22px;
+
+  background:
+    rgba(255, 255, 255, .045);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.035);
+
+  transition:
+
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+
+}
+
+
+.pin-box:focus-within {
+
+  border-color:
+    rgba(223, 169, 193, .42);
+
+  background:
+    rgba(255, 255, 255, .065);
+
+  box-shadow:
+
+    0 0 24px
+    rgba(199, 137, 167, .09);
+
+}
+
+
+.pin-box input {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    2;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  border:
+    none;
+
+  outline:
+    none;
+
+  background:
+    transparent;
+
+  color:
+    transparent;
+
+  caret-color:
+    transparent;
+
+  cursor:
+    text;
+
+}
+
+
+/* =========================================================
+   PIN HEARTS
+   ========================================================= */
+
+.pin-hearts {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    11px;
+
+  pointer-events:
+    none;
+
+}
+
+
+.pin-hearts span {
+
+  width:
+    22px;
+
+  height:
+    22px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    16px;
+
+  color:
+    rgba(237, 199, 215, .28);
+
+  transition:
+
+    transform .2s ease,
+    color .2s ease,
+    text-shadow .2s ease;
+
+}
+
+
+.pin-hearts span.active {
+
+  color:
+    var(--pink-light);
+
+  transform:
+    scale(1.2);
+
+  text-shadow:
+
+    0 0 12px
+    rgba(223, 169, 193, .55);
+
+}
+
+
+/* =========================================================
+   PIN BOTTOM
+   ========================================================= */
+
+.pin-bottom {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin-top:
+    9px;
+
+  padding:
+    0 4px;
+
+  font-size:
+    8px;
+
+  letter-spacing:
+    1px;
+
+  color:
+    rgba(245, 233, 223, .3);
+
+}
+
+
+.pin-bottom button {
+
+  border:
+    none;
+
+  padding:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    rgba(245, 233, 223, .38);
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size:
+    8px;
+
+  letter-spacing:
+    1px;
+
+  cursor:
+    pointer;
+
+  transition:
+    color .2s ease;
+
+}
+
+
+.pin-bottom button:hover {
+
+  color:
+    var(--pink-soft);
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+   ========================================================= */
+.next-button {
+  width: 145px;
+  height: 48px;
+
+  margin: 24px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  border: 1px solid
+    rgba(237, 199, 215, .28);
+
+  border-radius: 999px;
+
+  background:
+    rgba(199, 137, 167, .12);
+
+  color:
+    var(--cream);
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.next-button span:last-child {
+  font-size: 16px;
+
+  color:
+    var(--pink-light);
+
+  transition:
+    transform .25s ease;
+}
+
+
+.next-button:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    rgba(199, 137, 167, .2);
+
+  border-color:
+    rgba(237, 199, 215, .45);
+
+  box-shadow:
+    0 8px 25px
+    rgba(199, 137, 167, .14);
+}
+
+
+.next-button:hover span:last-child {
+  transform:
+    translateX(4px);
+}
+
+
+.next-button:active {
+  transform:
+    scale(.97);
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error {
+
+  min-height:
+    15px;
+
+  margin:
+    9px 0 0;
+
+  opacity:
+    0;
+
+  font-size:
+    9px;
+
+  color:
+    var(--pink-light);
+
+  transition:
+    opacity .25s ease;
+
+}
+
+
+.error.show {
+
+  opacity:
+    1;
+
+}
+
+
+/* =========================================================
+   FLOATING DECORATIONS
+   ========================================================= */
+
+.floating-heart,
+.sparkle {
+
+  position:
+    absolute;
+
+  z-index:
+    2;
+
+  pointer-events:
+    none;
+
+}
+
+
+.heart-one {
+
+  top:
+    53px;
+
+  left:
+    36px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    19px;
+
+  color:
+    rgba(223, 169, 193, .35);
+
+  animation:
+    floatOne 4s
+    ease-in-out
+    infinite;
+
+}
+
+
+.heart-two {
+
+  right:
+    34px;
+
+  bottom:
+    75px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    15px;
+
+  color:
+    rgba(223, 169, 193, .28);
+
+  animation:
+    floatTwo 4.8s
+    ease-in-out
+    infinite;
+
+}
+
+
+.sparkle-one {
+
+  top:
+    105px;
+
+  right:
+    55px;
+
+  font-size:
+    10px;
+
+  color:
+    rgba(237, 199, 215, .5);
+
+  animation:
+    sparkle 2.5s
+    ease-in-out
+    infinite;
+
+}
+
+
+.sparkle-two {
+
+  left:
+    57px;
+
+  bottom:
+    130px;
+
+  font-size:
+    8px;
+
+  color:
+    rgba(237, 199, 215, .35);
+
+  animation:
+    sparkle 3s
+    ease-in-out
+    infinite reverse;
+
+}
+
+
+/* =========================================================
+   FLOAT ANIMATION
+   ========================================================= */
+
+@keyframes floatOne {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-8deg);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-8px)
+      rotate(4deg);
+
+  }
+
+}
+
+
+@keyframes floatTwo {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(5deg);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(7px)
+      rotate(-5deg);
+
+  }
+
+}
+
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+
+    opacity:
+      .3;
+
+    transform:
+      scale(.8);
+
+  }
+
+  50% {
+
+    opacity:
+      1;
+
+    transform:
+      scale(1.25);
+
+  }
+
+}
+
+
+/* =========================================================
+   WRONG PASSWORD
+   ========================================================= */
+
+body.wrong .anniversary-card {
+
+  animation:
+    shake .35s ease;
+
+}
+
+
+@keyframes shake {
+
+  0%,
+  100% {
+
+    transform:
+      translateX(0);
+
+  }
+
+  25% {
+
+    transform:
+      translateX(-6px);
+
+  }
+
+  75% {
+
+    transform:
+      translateX(6px);
+
+  }
+
+}
+
+
+/* =========================================================
+   UNLOCK ANIMATION
+   ========================================================= */
+
+body.unlocking .page {
+
+  animation:
+
+    pageExit
+    1.7s
+    cubic-bezier(.7, 0, .2, 1)
+    forwards;
+
+}
+
+
+@keyframes pageExit {
+
+  0% {
+
+    opacity:
+      1;
+
+    transform:
+      scale(1);
+
+  }
+
+  55% {
+
+    opacity:
+      1;
+
+    transform:
+      scale(1.025);
+
+  }
+
+  100% {
+
+    opacity:
+      0;
+
+    transform:
+      scale(1.07);
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .page {
+
+    width:
+      88vw;
+
+    min-height:
+      auto;
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      45px;
+
+    padding:
+      30px 0 40px;
+
+  }
+
+
+  .memory {
+
+    order:
+      1;
+
+  }
+
+
+  .anniversary-card {
+
+    order:
+      2;
+
+    min-height:
+      540px;
+
+    max-width:
+      430px;
+
+  }
+
+
+  .video-frame {
+
+    width:
+      min(310px, 76vw);
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .page {
+
+    width:
+      90vw;
+
+  }
+
+
+  .video-frame {
+
+    width:
+      min(285px, 75vw);
+
+  }
+
+
+  .anniversary-card {
+
+    min-height:
+      520px;
+
+    border-radius:
+      24px;
+
+  }
+
+
+  .card-content {
+
+    width:
+      80%;
+
+  }
+
+
+  .title h1 {
+
+    font-size:
+      41px;
+
+  }
+
+
+  .love-time {
+
+    gap:
+      9px;
+
+  }
+
+
+  .time-item strong {
+
+    font-size:
+      21px;
+
+  }
+
+
+  .pin-hearts {
+
+    gap:
+      7px;
+
+  }
+
+
+  .floating-heart.heart-one {
+
+    left:
+      24px;
+
+  }
+
+
+  .floating-heart.heart-two {
+
+    right:
+      24px;
+
+  }
+
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Memories ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="memory.css">
+</head>
+
+<body>
+
+  <div class="memory-glow glow-one"></div>
+  <div class="memory-glow glow-two"></div>
+  <div class="grain"></div>
+
+  <main class="memory-page">
+
+
+<header class="memory-header">
+
+  <button class="back-button" id="backButton">
+    ←
+  </button>
+
+  <div class="memory-title">
+    <span>our little memories</span>
+    <h1>เรื่องราวของเรา</h1>
+    <p>ค่อย ๆ เปิดดูทีละเรื่องนะ</p>
+  </div>
+
+  <span class="memory-heart">♡</span>
+
+</header>
+
+
+<div class="memory-progress">
+
+  <span class="progress-current" id="progressCurrent">
+    01
+  </span>
+
+  <div class="progress-line">
+    <div id="progressBar"></div>
+  </div>
+
+  <span>03</span>
+
+</div>
+
+
+<!-- MEMORY 01 -->
+<section class="memory-story active" data-story="1">
+
+  <div class="story-visual visual-one">
+
+    <div class="scrap-paper paper-back"></div>
+
+    <div class="scrap-paper paper-main">
+
+      <div class="tape tape-top"></div>
+
+      <div class="photo-frame">
+
+        <img
+          src="images/memory1.jpg"
+          alt="ความทรงจำของเรา"
+        >
+
+      </div>
+
+      <div class="photo-caption">
+        OUR LITTLE MOMENT ♡
+      </div>
+
+    </div>
+
+    <div class="scrap-note">
+      <span>01</span>
+      <small>first memory</small>
+    </div>
+
+    <div class="scrap-sticker">
+      ♡
+    </div>
+
+    <div class="visual-date">
+      <strong>26</strong>
+      <small>JUL 2025</small>
+    </div>
+
+  </div>
+
+
+  <div class="story-content">
+
+    <span class="story-number">
+      01 / first day
+    </span>
+
+    <h2>
+      วันแรกของเรา
+    </h2>
+
+    <p>
+      วันธรรมดาวันหนึ่ง ใครจะคิดว่าจะกลายเป็นวันที่เราอยากจำไปนาน ๆ
+    </p>
+
+    <span class="story-date">
+      26.07.2025 · 11:18
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- MEMORY 02 -->
+<section class="memory-story" data-story="2">
+
+  <div class="story-visual visual-two">
+
+    <div class="scrap-paper paper-back"></div>
+
+    <div class="scrap-paper paper-main">
+
+      <div class="tape tape-side"></div>
+
+      <div class="photo-frame">
+
+        <img
+          src="images/memory2.jpg"
+          alt="ความทรงจำของเรา"
+        >
+
+      </div>
+
+      <div class="photo-caption">
+        THE BEGINNING ♡
+      </div>
+
+    </div>
+
+    <div class="scrap-note">
+      <span>02</span>
+      <small>beginning</small>
+    </div>
+
+    <div class="scrap-sticker">
+      +
+    </div>
+
+    <div class="visual-label">
+      The beginning of love
+    </div>
+
+  </div>
+
+
+  <div class="story-content">
+
+    <span class="story-number">
+      02 / beginning
+    </span>
+
+    <h2>
+      จุดเริ่มต้นของรัก
+    </h2>
+
+    <p>
+      ขอบคุณที่วันนั้นเราเลือกที่จะเดินไปด้วยกัน
+    </p>
+
+    <span class="story-date">
+      12.10.2025 · 21:42
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- MEMORY 03 -->
+<section class="memory-story" data-story="3">
+
+  <div class="story-visual visual-three">
+
+    <div class="scrap-paper paper-back"></div>
+
+    <div class="scrap-paper paper-main">
+
+      <div class="tape tape-corner"></div>
+
+      <div class="photo-frame">
+
+        <img
+          src="images/memory3.jpg"
+          alt="ความทรงจำของเรา"
+        >
+
+      </div>
+
+      <div class="photo-caption">
+        STILL HERE ♡
+      </div>
+
+    </div>
+
+    <div class="scrap-note">
+      <span>03</span>
+      <small>together</small>
+    </div>
+
+    <div class="scrap-sticker">
+      ♡
+    </div>
+
+    <div class="visual-label">
+      still here
+    </div>
+
+  </div>
+
+
+  <div class="story-content">
+
+    <span class="story-number">
+      03 / together
+    </span>
+
+    <h2>
+      จนถึงวันนี้
+    </h2>
+
+    <p>
+      จากวันแรกจนถึงวันนี้ขอบคุณที่ยังอยู่ข้าง ๆ กันนะ
+    </p>
+
+    <span class="story-date">
+      and counting...
+    </span>
+
+  </div>
+
+</section>
+
+
+<div class="story-action">
+
+  <button id="nextStory">
+
+    <span id="nextText">
+      เรื่องราวต่อไป
+    </span>
+
+    <span class="arrow">
+      →
+    </span>
+
+  </button>
+
+</div>
+
+
+<section class="memory-ending" id="memoryEnding">
+
+  <div class="ending-heart">
+    ♡
+  </div>
+
+  <span>
+    more memories to come
+  </span>
+
+  <p>
+    อยู่เขียนเรื่องราวไปด้วยกันนานๆนะคะ ♡
+  </p>
+
+  <button id="backToMenu">
+    ← กลับไปพื้นที่ของเรา
+  </button>
+
+</section>
+
+
+<footer class="memory-footer">
+  <span>only for us</span>
+  <span>♡</span>
+</footer>
+
+
+  </main>
+
+  <script src="memory.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Anniversary ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="lock.css">
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="bg-glow bg-glow-left"></div>
+  <div class="bg-glow bg-glow-right"></div>
+  <div class="grain"></div>
+
+
+  <main class="page">
+
+    <!-- =====================================================
+         LEFT : VIDEO
+    ====================================================== -->
+
+    <section class="memory">
+
+      <div class="memory-label">
+        our favorite moment
+      </div>
+
+      <div class="video-frame">
+
+        <video
+          class="couple-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+          <source src="images/01.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-overlay"></div>
+
+        <div class="video-caption">
+          1 year with you ♡
+        </div>
+
+      </div>
+
+      <div class="memory-caption">
+        one little moment, just for us.
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RIGHT : ANNIVERSARY CARD
+    ====================================================== -->
+
+    <section class="anniversary-card">
+
+      <!-- DECORATION -->
+
+      <div class="floating-heart heart-one">
+        ♡
+      </div>
+
+      <div class="floating-heart heart-two">
+        ♡
+      </div>
+
+      <div class="sparkle sparkle-one">
+        ✦
+      </div>
+
+      <div class="sparkle sparkle-two">
+        ✦
+      </div>
+
+
+      <div class="card-content">
+
+        <!-- TOP HEART -->
+
+        <div class="top-heart">
+          ♡
+        </div>
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+
+          <h1>
+            Anniversary<i>♡</i>
+          </h1>
+
+        </div>
+
+
+        <!-- LOVE TIMER -->
+
+        <div class="love-time">
+
+          <div class="time-item">
+
+            <strong id="years">
+              0
+            </strong>
+
+            <span>
+              YEAR
+            </span>
+
+          </div>
+
+
+          <div class="time-dot">
+            ·
+          </div>
+
+
+          <div class="time-item">
+
+            <strong id="days">
+              0
+            </strong>
+
+            <span>
+              DAYS
+            </span>
+
+          </div>
+
+
+          <div class="time-dot">
+            ·
+          </div>
+
+
+          <div class="time-item">
+
+            <strong id="hours">
+              0
+            </strong>
+
+            <span>
+              HOURS
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div class="message">
+          ใส่รหัสของเราก่อนนะ
+        </div>
+
+
+        <!-- =================================================
+             PASSWORD
+        ================================================== -->
+
+        <div class="pin-box">
+
+          <input
+            id="password"
+            type="password"
+            maxlength="6"
+            inputmode="numeric"
+            autocomplete="off"
+            aria-label="รหัสผ่าน"
+          >
+
+
+          <div class="pin-hearts">
+
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PIN INFO -->
+
+        <div class="pin-bottom">
+
+          <span>
+            (6 ตัว)
+          </span>
+
+          <button
+            id="showPassword"
+            type="button"
+          >
+            SHOW
+          </button>
+
+        </div>
+
+
+        <!-- NEXT -->
+
+        <button
+          class="next-button"
+          id="unlockBtn"
+          type="button"
+        >
+
+          <span>
+            Next
+          </span>
+
+          <span>
+            →
+          </span>
+
+        </button>
+
+
+        <!-- ERROR -->
+
+        <p
+          id="error"
+          class="error"
+        >
+          รหัสยังไม่ถูกนะ ลองใหม่อีกครั้ง ♡
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+
+    /* =====================================================
+       LOVE TIMER
+
+       เริ่มคบกัน:
+       12/10/2025 เวลา 21:42 น.
+       เวลาไทย GMT+7
+    ====================================================== */
+
+    const startDate = new Date(
+      "2025-10-12T21:42:00+07:00"
+    );
+
+
+    function updateLoveTime() {
+
+      const now = new Date();
+
+
+      let years =
+        now.getFullYear() -
+        startDate.getFullYear();
+
+
+      let anniversary =
+        new Date(startDate);
+
+
+      anniversary.setFullYear(
+        startDate.getFullYear() + years
+      );
+
+
+      if (now < anniversary) {
+
+        years--;
+
+        anniversary =
+          new Date(startDate);
+
+        anniversary.setFullYear(
+          startDate.getFullYear() + years
+        );
+
+      }
+
+
+      const difference =
+        now - anniversary;
+
+
+      const days =
+        Math.floor(
+          difference /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (
+            difference %
+            (1000 * 60 * 60 * 24)
+          ) /
+          (1000 * 60 * 60)
+        );
+
+
+      document.getElementById("years")
+        .textContent = years;
+
+
+      document.getElementById("days")
+        .textContent = days;
+
+
+      document.getElementById("hours")
+        .textContent = hours;
+
+    }
+
+
+    updateLoveTime();
+
+
+    setInterval(
+      updateLoveTime,
+      1000
+    );
+
+
+
+    /* =====================================================
+       ELEMENTS
+    ====================================================== */
+
+    const password =
+      document.getElementById(
+        "password"
+      );
+
+
+    const unlockBtn =
+      document.getElementById(
+        "unlockBtn"
+      );
+
+
+    const showPassword =
+      document.getElementById(
+        "showPassword"
+      );
+
+
+    const error =
+      document.getElementById(
+        "error"
+      );
+
+
+    const hearts =
+      document.querySelectorAll(
+        ".pin-hearts span"
+      );
+
+
+
+    /* =====================================================
+       PASSWORD HEARTS
+
+       พิมพ์ตัวเลข
+       หัวใจจะติดทีละดวง
+    ====================================================== */
+
+    password.addEventListener(
+      "input",
+      () => {
+
+        const length =
+          password.value.length;
+
+
+        hearts.forEach(
+          (heart, index) => {
+
+            heart.classList.toggle(
+              "active",
+              index < length
+            );
+
+          }
+        );
+
+
+        error.classList.remove(
+          "show"
+        );
+
+      }
+    );
+
+
+
+    /* =====================================================
+       SHOW / HIDE PASSWORD
+    ====================================================== */
+
+    showPassword.addEventListener(
+      "click",
+      () => {
+
+        if (
+          password.type ===
+          "password"
+        ) {
+
+          password.type =
+            "text";
+
+          showPassword.textContent =
+            "HIDE";
+
+        } else {
+
+          password.type =
+            "password";
+
+          showPassword.textContent =
+            "SHOW";
+
+        }
+
+      }
+    );
+
+
+
+    /* =====================================================
+       UNLOCK
+    ====================================================== */
+
+    function unlock() {
+
+      const code =
+        password.value.trim();
+
+
+      /* PASSWORD */
+
+      if (code === "121068") {
+
+
+        sessionStorage.setItem(
+          "unlocked",
+          "yes"
+        );
+
+
+        error.classList.remove(
+          "show"
+        );
+
+
+        /* START EXIT ANIMATION */
+
+        document.body.classList.add(
+          "unlocking"
+        );
+
+
+        unlockBtn.classList.add(
+          "success"
+        );
+
+
+        unlockBtn.innerHTML = `
+          <span>opening ♡</span>
+          <span>→</span>
+        `;
+
+
+        /* GLOW */
+
+        setTimeout(() => {
+
+          document.body.classList.add(
+            "open-universe"
+          );
+
+        }, 700);
+
+
+        /* GO TO UNIVERSE */
+
+        setTimeout(() => {
+
+          window.location.href =
+            "universe.html";
+
+        }, 1700);
+
+
+      } else {
+
+
+        /* WRONG PASSWORD */
+
+        error.classList.add(
+          "show"
+        );
+
+
+        document.body.classList.add(
+          "wrong"
+        );
+
+
+        setTimeout(() => {
+
+          document.body.classList.remove(
+            "wrong"
+          );
+
+        }, 500);
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       BUTTON
+    ====================================================== */
+
+    unlockBtn.addEventListener(
+      "click",
+      unlock
+    );
+
+
+
+    /* =====================================================
+       ENTER KEY
+    ====================================================== */
+
+    password.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Enter"
+        ) {
+
+          unlock();
+
+        }
+
+      }
+    );
+
+
+  </script>
+
+</body>
+</html>

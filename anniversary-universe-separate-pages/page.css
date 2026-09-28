@@ -1,0 +1,739 @@
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+
+  margin: 0;
+
+  min-height: 100%;
+
+  background: #070914;
+
+  color: #f7f2f7;
+
+  font-family: "Kanit", sans-serif;
+
+  font-weight: 300;
+
+}
+
+
+body {
+
+  background:
+    radial-gradient(
+      circle at 70% 10%,
+      #33204a,
+      #080a16 42%,
+      #04050c
+    );
+
+}
+
+
+a {
+
+  text-decoration: none;
+
+  color: inherit;
+
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+
+  position: fixed;
+
+  inset: 0;
+
+  opacity: 0.25;
+
+  background-image:
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#dba7ff 1px, transparent 1px);
+
+  background-size:
+    100px 100px,
+    170px 170px;
+
+  pointer-events: none;
+
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+.nav {
+
+  height: 82px;
+
+  padding: 0 6vw;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #fff1;
+
+}
+
+
+.nav a {
+
+  color: white;
+
+}
+
+
+.logo {
+
+  font-family: "Playfair Display";
+
+  font-size: 20px;
+
+}
+
+
+.logo em {
+
+  color: #dfa0c8;
+
+}
+
+
+.back {
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #898fa6 !important;
+
+}
+
+
+/* =========================
+   WRAPPER
+========================= */
+
+.wrap {
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 70px 6vw;
+
+}
+
+
+/* =========================
+   TITLES
+========================= */
+
+.kicker {
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: #d99abd;
+
+}
+
+
+.title {
+
+  font-family: "Playfair Display";
+
+  font-weight: 500;
+
+  font-size: clamp(48px, 7vw, 85px);
+
+  line-height: 0.9;
+
+  margin: 14px 0;
+
+}
+
+
+.title em {
+
+  color: #e5a6cb;
+
+}
+
+
+.sub {
+
+  color: #9096ab;
+
+  line-height: 1.9;
+
+}
+
+
+/* =========================
+   MEMORY
+========================= */
+
+.memory {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 16px;
+
+  margin-top: 45px;
+
+}
+
+
+.card {
+
+  height: 300px;
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #bd7799,
+      #272747
+    );
+
+  box-shadow:
+    0 25px 70px #0008;
+
+  transition: 0.3s;
+
+}
+
+
+.card:hover {
+
+  transform: translateY(-6px);
+
+}
+
+
+.card:nth-child(2) {
+
+  background:
+    linear-gradient(
+      145deg,
+      #dfb0c5,
+      #414269
+    );
+
+}
+
+
+.card:nth-child(3) {
+
+  background:
+    linear-gradient(
+      145deg,
+      #7568a5,
+      #171a32
+    );
+
+}
+
+
+.card:nth-child(4) {
+
+  background:
+    linear-gradient(
+      145deg,
+      #c9829f,
+      #343a62
+    );
+
+}
+
+
+.card:nth-child(5) {
+
+  background:
+    linear-gradient(
+      145deg,
+      #a886bd,
+      #20243f
+    );
+
+}
+
+
+.card:nth-child(6) {
+
+  background:
+    linear-gradient(
+      145deg,
+      #d7a1b8,
+      #4b365e
+    );
+
+}
+
+
+.card::after {
+
+  content: "YOUR PHOTO";
+
+  position: absolute;
+
+  inset: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #fff7;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+}
+
+
+.card b,
+.card small {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+
+.card b {
+
+  font-family: "Playfair Display";
+
+  font-size: 20px;
+
+}
+
+
+.card small {
+
+  font-size: 10px;
+
+  color: #fff9;
+
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+
+  max-width: 760px;
+
+  margin: 55px auto;
+
+  border-left:
+    1px solid #db9fc855;
+
+}
+
+
+.event {
+
+  display: grid;
+
+  grid-template-columns:
+    150px 1fr;
+
+  gap: 30px;
+
+  padding:
+    0 0 50px 28px;
+
+  position: relative;
+
+}
+
+
+.event::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: -5px;
+
+  top: 3px;
+
+  width: 9px;
+
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #e1a2c7;
+
+  box-shadow:
+    0 0 18px #e1a2c7;
+
+}
+
+
+.event time {
+
+  font-size: 11px;
+
+  color: #d79abb;
+
+}
+
+
+.event h2 {
+
+  font-family: "Playfair Display";
+
+  font-size: 25px;
+
+  margin: 0 0 7px;
+
+}
+
+
+.event p {
+
+  color: #8e94a8;
+
+  line-height: 1.8;
+
+  margin: 0;
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-box {
+
+  max-width: 760px;
+
+  margin: 55px auto;
+
+  background: #f5e8ef;
+
+  color: #4e3d4b;
+
+  padding: 55px;
+
+  box-shadow:
+    0 30px 90px #0009;
+
+  border-radius: 6px;
+
+  line-height: 2;
+
+}
+
+
+.letter-box h1 {
+
+  font-family: "Playfair Display";
+
+  font-size: 55px;
+
+  margin: 0 0 20px;
+
+}
+
+
+.sign {
+
+  text-align: right;
+
+  font-family: "Playfair Display";
+
+  font-style: italic;
+
+  font-size: 20px;
+
+  margin-top: 40px;
+
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music {
+
+  max-width: 850px;
+
+  margin: 60px auto;
+
+  display: grid;
+
+  grid-template-columns:
+    330px 1fr;
+
+  gap: 50px;
+
+  align-items: center;
+
+}
+
+
+.album {
+
+  height: 330px;
+
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #fff,
+      #e3a7ca 13%,
+      #805f9d 50%,
+      #171b38
+    );
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 100px;
+
+  box-shadow:
+    0 25px 80px #0009;
+
+}
+
+
+.music h2 {
+
+  font-family: "Playfair Display";
+
+  font-size: 45px;
+
+  margin: 10px 0;
+
+}
+
+
+.bar {
+
+  height: 3px;
+
+  background: #fff2;
+
+  margin: 35px 0;
+
+}
+
+
+.bar i {
+
+  display: block;
+
+  width: 42%;
+
+  height: 100%;
+
+  background: #dfa0c8;
+
+}
+
+
+.play {
+
+  width: 58px;
+
+  height: 58px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #dfa0c8;
+
+}
+
+
+/* =========================
+   SECRET
+========================= */
+
+.secret {
+
+  text-align: center;
+
+  padding-top: 70px;
+
+}
+
+
+.gift {
+
+  font-size: 110px;
+
+  filter:
+    drop-shadow(
+      0 20px 35px #d78eb955
+    );
+
+}
+
+
+.secret h1 {
+
+  font-family: "Playfair Display";
+
+  font-size: 55px;
+
+}
+
+
+.secret p {
+
+  color: #9197aa;
+
+}
+
+
+.btn {
+
+  margin-top: 25px;
+
+  border:
+    1px solid #dfa0c8aa;
+
+  background: #dfa0c81a;
+
+  color: white;
+
+  border-radius: 99px;
+
+  padding: 13px 24px;
+
+  font-family: inherit;
+
+}
+
+
+.btn:hover {
+
+  background: #dfa0c833;
+
+}
+
+
+.reveal {
+
+  display: none;
+
+  margin-top: 35px;
+
+  font-family: "Playfair Display";
+
+  font-size: 38px;
+
+  color: #e5a6cb;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 750px) {
+
+  .memory {
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+
+  .event {
+
+    grid-template-columns: 1fr;
+
+    gap: 5px;
+
+  }
+
+
+  .letter-box {
+
+    padding: 30px;
+
+  }
+
+
+  .music {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .album {
+
+    width: 270px;
+
+    margin: auto;
+
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .memory {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .title {
+
+    font-size: 52px;
+
+  }
+
+}

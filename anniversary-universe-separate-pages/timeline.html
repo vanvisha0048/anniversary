@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Little Moments ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="timeline.css">
+</head>
+
+<body>
+
+  <main class="diary" id="diary">
+
+    <!-- TOP -->
+    <header class="topbar">
+
+      <button
+        class="back-btn"
+        id="backBtn"
+        type="button"
+      >
+        ← กลับ
+      </button>
+
+      <div class="page-title">
+        <span>OUR STORY</span>
+        <strong>little moments</strong>
+      </div>
+
+      <div class="counter" id="counter">
+        01 / 07
+      </div>
+
+    </header>
+
+
+    <!-- TIMELINE ด้านบน -->
+    <section class="story-line">
+
+      <div class="timeline-track">
+
+        <div class="timeline-line"></div>
+
+        <div
+          class="timeline-progress"
+          id="reelProgress"
+        ></div>
+
+        <div
+          class="heart-runner"
+          id="heartRunner"
+        >
+          ♥
+        </div>
+
+        <div
+          class="memory-points"
+          id="memoryPoints"
+        ></div>
+
+      </div>
+
+      <div
+        class="timeline-numbers"
+        id="timelineNumbers"
+      >
+      </div>
+
+    </section>
+
+
+    <!-- MEMORY -->
+    <section class="memory-section">
+
+      <!-- POLAROID -->
+      <div class="polaroid-wrap">
+
+        <div class="polaroid" id="photoArea">
+
+          <div class="photo-tape"></div>
+
+          <div class="photo-holder">
+
+            <img
+              id="mainImage"
+              src=""
+              alt=""
+            >
+
+          </div>
+
+          <div class="polaroid-caption">
+
+            <span id="photoNumber">
+              01
+            </span>
+
+            <span id="photoCaption">
+              our little moment
+            </span>
+
+            <span>♡</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- TEXT -->
+      <div class="memory-content">
+
+        <div class="memory-meta">
+
+          <span id="memoryChapter">
+            CHAPTER ONE
+          </span>
+
+          <span class="dot">·</span>
+
+          <span id="memoryDate">
+            15.12.2025
+          </span>
+
+        </div>
+
+
+        <h1 id="memoryTitle">
+          เจอกันครั้งแรก
+        </h1>
+
+
+        <div class="title-line"></div>
+
+
+        <p id="memoryDescription">
+          เกร็งและตื่นเต้นมาก ๆ
+        </p>
+
+
+        <div class="memory-note">
+
+          <span>
+            a little memory
+          </span>
+
+          <i>♡</i>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="memory-hint">
+      our story, one moment at a time
+    </div>
+
+  </main>
+
+
+  <!-- END -->
+  <section
+    class="end-screen"
+    id="endScreen"
+  >
+
+    <div class="end-content">
+
+      <div class="end-label">
+        THE END
+      </div>
+
+      <h1>
+        our story<br>
+        <i>continues...</i>
+      </h1>
+
+      <p>
+        อยู่สร้างความทรงจำไปด้วยกันนะ ♡
+      </p>
+
+      <div class="end-date">
+        12.10.2025 — ∞
+      </div>
+
+      <button
+        class="back-menu-btn"
+        id="endBackBtn"
+        type="button"
+      >
+        ← กลับ
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- LIGHTBOX -->
+  <div
+    class="lightbox"
+    id="lightbox"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      type="button"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+    <div class="lightbox-inner">
+
+      <img
+        id="lightboxImage"
+        src=""
+        alt=""
+      >
+
+      <div
+        class="lightbox-caption"
+        id="lightboxCaption"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <script src="timeline.js"></script>
+
+</body>
+</html>

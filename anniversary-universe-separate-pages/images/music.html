@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Song ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="music.css">
+</head>
+
+<body>
+
+  <main class="music-page" id="musicPage">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <button
+        class="back-btn"
+        id="backBtn"
+        type="button"
+      >
+        ← กลับ
+      </button>
+
+      <div class="page-title">
+
+        <span>
+          OUR SONG
+        </span>
+
+        <strong>
+          little moments
+        </strong>
+
+      </div>
+
+      <div class="counter">
+        ♡
+      </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <section class="song-section">
+
+      <!-- LEFT : RECORD -->
+      <div class="record-area">
+
+        <div class="record-frame">
+
+          <div class="record">
+
+            <div class="record-lines"></div>
+
+            <div class="record-center">
+
+              <div class="center-label">
+                <span>♡</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="record-label">
+            OUR SONG
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT : INFORMATION -->
+      <div class="song-content">
+
+        <div class="song-meta">
+
+          <span>
+            OUR LITTLE SONG
+          </span>
+
+          <span class="dot">
+            ·
+          </span>
+
+          <span>
+            12.10.2025
+          </span>
+
+        </div>
+
+
+        <h1>
+          เพลงของ<br>
+          <i>เรา</i>
+        </h1>
+
+
+        <p class="song-description">
+          บางเพลงอาจเป็นแค่เพลงสำหรับคนอื่น
+          แต่สำหรับเรา มันกลายเป็นเพลงที่พอฟังแล้ว
+          ก็ทำให้นึกถึงกันเสมอ
+        </p>
+
+
+        <!-- SONG -->
+        <div class="song-info">
+
+          <span class="now-playing">
+            NOW PLAYING
+          </span>
+
+          <strong id="songTitle">
+            Our Song
+          </strong>
+
+          <small id="songArtist">
+            for you & me ♡
+          </small>
+
+        </div>
+
+
+        <!-- PLAYER -->
+        <div class="player">
+
+          <div
+            class="progress-area"
+            id="progressArea"
+          >
+
+            <div
+              class="progress-bar"
+              id="progressBar"
+            ></div>
+
+          </div>
+
+
+          <div class="time-row">
+
+            <span id="currentTime">
+              0:00
+            </span>
+
+            <span id="duration">
+              0:00
+            </span>
+
+          </div>
+
+
+          <div class="player-controls">
+
+            <button
+              class="control-btn"
+              id="restartBtn"
+              type="button"
+              aria-label="Restart"
+            >
+              ↺
+            </button>
+
+
+            <button
+              class="play-btn"
+              id="playBtn"
+              type="button"
+              aria-label="Play"
+            >
+
+              <span id="playIcon">
+                ▶
+              </span>
+
+            </button>
+
+
+            <button
+              class="control-btn"
+              id="muteBtn"
+              type="button"
+              aria-label="Mute"
+            >
+              ♫
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="song-note">
+
+          <span>
+            12.10.2025
+          </span>
+
+          <span>
+            —
+          </span>
+
+          <span>
+            still our song
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="music-footer">
+
+      <span>
+        some songs become memories
+      </span>
+
+      <span>
+        ♡
+      </span>
+
+    </footer>
+
+  </main>
+
+
+  <!-- AUDIO -->
+  <audio
+    id="audio"
+    src="images/our-song.mp3"
+    preload="metadata"
+  ></audio>
+
+
+  <script src="music.js"></script>
+
+</body>
+</html>

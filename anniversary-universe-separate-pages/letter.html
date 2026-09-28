@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Letter ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="letter.css">
+</head>
+
+<body>
+
+  <div class="letter-glow glow-one"></div>
+  <div class="letter-glow glow-two"></div>
+  <div class="grain"></div>
+
+  <main class="letter-page">
+
+    <header class="letter-header">
+
+      <button class="back-button" id="backButton">
+        ←
+      </button>
+
+      <div class="letter-heading">
+
+        <span>a little something</span>
+
+        <h1>จดหมายถึงเธอ</h1>
+
+        <p>ค่อย ๆ ต่อหัวใจให้ครบก่อนนะ</p>
+
+      </div>
+
+      <span class="letter-heart">
+        ♡
+      </span>
+
+    </header>
+
+
+    <section class="letter-stage">
+
+      <div class="puzzle-area">
+
+        <div class="puzzle-heading">
+
+          <span class="puzzle-label">
+            PRIVATE NOTE
+          </span>
+
+          <h2>
+            something is missing...
+          </h2>
+
+          <p id="puzzleStatus">
+            ต่อหัวใจให้ครบก่อนนะ ♡
+          </p>
+
+        </div>
+
+
+        <div
+          class="puzzle-board"
+          id="puzzleBoard"
+        >
+
+          <button
+            class="puzzle-piece piece-one"
+            data-piece="1"
+            aria-label="ชิ้นส่วนที่ 1"
+          ></button>
+
+          <button
+            class="puzzle-piece piece-two"
+            data-piece="2"
+            aria-label="ชิ้นส่วนที่ 2"
+          ></button>
+
+          <button
+            class="puzzle-piece piece-three"
+            data-piece="3"
+            aria-label="ชิ้นส่วนที่ 3"
+          ></button>
+
+          <button
+            class="puzzle-piece piece-four"
+            data-piece="4"
+            aria-label="ชิ้นส่วนที่ 4"
+          ></button>
+
+
+          <div
+            class="complete-heart"
+            id="completeHeart"
+          >
+            ♥
+          </div>
+
+        </div>
+
+
+        <div
+          class="puzzle-hint"
+          id="puzzleHint"
+        >
+          <span>♡</span>
+          แตะชิ้นส่วนแต่ละชิ้น
+          <span>♡</span>
+        </div>
+
+
+        <article
+          class="hidden-letter"
+          id="hiddenLetter"
+        >
+
+          <div class="letter-inner">
+
+            <div class="paper-header">
+
+              <span>
+                PRIVATE NOTE
+              </span>
+
+              <span>
+                ♡
+              </span>
+
+            </div>
+
+
+            <h3>
+              ถึงเธอ
+            </h3>
+
+
+            <p>
+              ลูกหมาตุ้มปุ๊ของเค้าา Happy Anniversary 1 Year Naka
+              ขอบคุณนะที่เข้ามาเป็นส่วนหนึ่งของชีวิตเค้า ขอบคุณสำหรับวันที่ดี ขอบคุณสำหรับความรักที่มอบให้กัน
+              ที่เค้าเคยบอกไปว่าเค้าไม่เคยรักใครเท่านี้มาก่อนเลยเค้าพูดจริงๆนะ เพราะอะไรก็ไม่รู้เหมือนกันว่าทำไมถึงรักเธอได้มากขนาดนี้
+            </p>
+
+            <p>
+              เค้าไม่รู้ว่าอนาคตเราจะไปด้วยกันได้อีกไกลแค่ไหน เราจะยังอยากมีกันแบบนี้อยู่มั้ย เราจะเจออุปสรรค์อะไรเข้ามาอีกบ้าง เราจะยังอยากสู้ไปด้วยกันมั้ย
+              แต่ในเมื่อตอนนี้มันยังมีโอกาส เค้าจะพยายามทำให้มันดีขึ้นมากกว่านี้นะ อยู่สู้มันไปกับเค้าก่อนนะ อย่าเพิ่งไปไหนเลยนะเค้าต้องการเธอ
+            </p>
+
+            <p>
+              อยู่คอยให้กำลังใจเค้า อยู่ซัพพอร์ตเค้าไปนานๆนะ เค้ารักเธอมากจริงๆ ♡
+            </p>
+
+
+            <div class="letter-sign">
+
+              <span>
+                รัก,
+              </span>
+
+              <strong>
+                Mod Mod
+              </strong>
+
+            </div>
+
+
+            <div class="paper-footer">
+
+              <span>
+                12.10.2026
+              </span>
+
+              <span>
+                only for us
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <footer class="letter-footer">
+
+      <span>
+        only for us
+      </span>
+
+      <span>
+        ♡
+      </span>
+
+    </footer>
+
+  </main>
+
+
+  <script src="letter.js"></script>
+
+</body>
+</html>
